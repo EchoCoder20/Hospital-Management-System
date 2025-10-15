@@ -12,9 +12,16 @@ public class AppointmentService {
         return null;
     }
 
-    public void addAppointment(Appointment appointment) {
+    public void createAppointment(Appointment appointment) {
         // no return needed for void
     }
+    public void createAppointment(String patientId, String doctorId, LocalDate date){
+
+    }
+    public void createAppointment(String patientId, String doctorId, LocalDate date, String time){
+
+    }
+
 
     public boolean editAppointment(String appointmentId, Appointment updatedAppointment) {
         return false;
@@ -40,12 +47,23 @@ public class AppointmentService {
     public List<Appointment> getAppointmentsByDate(LocalDate date) {
         return null;
     }
-
+    public boolean rescheduleAppointment(String appointmentId, LocalDate newDate){
+        return true;
+    }
     public boolean rescheduleAppointment(String appointmentId, LocalDate newDate, String newTime) {
         return false;
+    }
+    public boolean rescheduleAppointment(Appointment appointment, LocalDate newDate, String newTime, String reason){
+        return true;
     }
 
     public boolean cancelAppointment(String appointmentId) {
         return false;
+    }
+    public List<Appointment> displayAppointments(LocalDate date){
+        return null;
+    }
+    public List<Appointment> displayAppointments(String doctorId, LocalDate startDate, LocalDate endDate){
+        return null;
     }
 }
