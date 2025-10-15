@@ -10,10 +10,10 @@ public class Patient extends Person {
     private String emergencyContact;
     private LocalDate registrationDate;
     private String insuranceId;
-    private List<String> medicalRecords;
-    private List<String> appointments;
+    private List<MedicalRecord> medicalRecords;
+    private List<Appointment> appointments;
 
-    public Patient(String id, String firstName, String lastName, LocalDate dateOfBirth, String gender, String phoneNumber, String email, String address, String patientId, String bloodGroup, List<String> allergies, String emergencyContact, LocalDate registrationDate, String insuranceId, List<String> medicalRecords, List<String> appointments) {
+    public Patient(String id, String firstName, String lastName, LocalDate dateOfBirth, String gender, String phoneNumber, String email, String address, String patientId, String bloodGroup, List<String> allergies, String emergencyContact, LocalDate registrationDate, String insuranceId, List<MedicalRecord> medicalRecords, List<Appointment> appointments) {
         super(id, firstName, lastName, dateOfBirth, gender, phoneNumber, email, address);
         this.patientId = patientId;
         this.bloodGroup = bloodGroup;
@@ -73,19 +73,19 @@ public class Patient extends Person {
         this.insuranceId = insuranceId;
     }
 
-    public List<String> getMedicalRecords() {
+    public List<MedicalRecord> getMedicalRecords() {
         return medicalRecords;
     }
 
-    public void setMedicalRecords(List<String> medicalRecords) {
+    public void setMedicalRecords(List<MedicalRecord> medicalRecords) {
         this.medicalRecords = medicalRecords;
     }
 
-    public List<String> getAppointments() {
+    public List<Appointment> getAppointments() {
         return appointments;
     }
 
-    public void setAppointments(List<String> appointments) {
+    public void setAppointments(List<Appointment> appointments) {
         this.appointments = appointments;
     }
 }

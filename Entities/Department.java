@@ -6,12 +6,12 @@ public class Department {
     private String departmentId;
     private String departmentName;
     private String headDoctorId;
-    private List<String> doctors;
-    private List<String> nurses;
+    private List<Doctor> doctors;
+    private List<Nurse> nurses;
     private int bedCapacity;
     private int availableBeds;
 
-    public Department(String departmentId, String departmentName, String headDoctorId, List<String> doctors, List<String> nurses, int bedCapacity, int availableBeds) {
+    public Department(String departmentId, String departmentName, String headDoctorId, List<Doctor> doctors, List<Nurse> nurses, int bedCapacity, int availableBeds) {
         this.departmentId = departmentId;
         this.departmentName = departmentName;
         this.headDoctorId = headDoctorId;
@@ -45,19 +45,19 @@ public class Department {
         this.headDoctorId = headDoctorId;
     }
 
-    public List<String> getDoctors() {
+    public List<Doctor> getDoctors() {
         return doctors;
     }
 
-    public void setDoctors(List<String> doctors) {
+    public void setDoctors(List<Doctor> doctors) {
         this.doctors = doctors;
     }
 
-    public List<String> getNurses() {
+    public List<Nurse> getNurses() {
         return nurses;
     }
 
-    public void setNurses(List<String> nurses) {
+    public void setNurses(List<Nurse> nurses) {
         this.nurses = nurses;
     }
 
