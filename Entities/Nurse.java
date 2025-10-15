@@ -8,9 +8,9 @@ public class Nurse extends Person{
     private String departmentId;
     private String shift; // Morning / Evening / Night
     private String qualification;
-    private List<String> assignedPatients;
+    private List<Patient> assignedPatients;
 
-    public Nurse(String id, String firstName, String lastName, LocalDate dateOfBirth, String gender, String phoneNumber, String email, String address, String nurseId, String departmentId, String shift, String qualification, List<String> assignedPatients) {
+    public Nurse(String id, String firstName, String lastName, LocalDate dateOfBirth, String gender, String phoneNumber, String email, String address, String nurseId, String departmentId, String shift, String qualification, List<Patient> assignedPatients) {
         super(id, firstName, lastName, dateOfBirth, gender, phoneNumber, email, address);
         this.nurseId = nurseId;
         this.departmentId = departmentId;
@@ -51,11 +51,11 @@ public class Nurse extends Person{
         this.qualification = qualification;
     }
 
-    public List<String> getAssignedPatients() {
+    public List<Patient> getAssignedPatients() {
         return assignedPatients;
     }
 
-    public void setAssignedPatients(List<String> assignedPatients) {
+    public void setAssignedPatients(List<Patient> assignedPatients) {
         this.assignedPatients = assignedPatients;
     }
 }
