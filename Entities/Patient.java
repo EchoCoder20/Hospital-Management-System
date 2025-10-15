@@ -88,4 +88,8 @@ public class Patient extends Person {
     public void setAppointments(List<Appointment> appointments) {
         this.appointments = appointments;
     }
+    public void displayInfo(){
+        super.displayInfo();
+//        We will add more details later
+    }
 }
