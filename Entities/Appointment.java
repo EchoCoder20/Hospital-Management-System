@@ -1,6 +1,7 @@
 package Entities;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Appointment {
     private String appointmentId;
@@ -85,5 +86,23 @@ public class Appointment {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+    public void reschedule(){
+
+    }
+    public void cancel(){
+
+    }
+    public void complete(){
+
+    }
+    public void addNotes(String notes){
+
+    }
+    public void addNotes(String notes, String addedBy){
+
+    }
+    public void addNotes(String notes, String addedBy, LocalDateTime timestamp){
+
     }
 }

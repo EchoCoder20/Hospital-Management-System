@@ -92,4 +92,22 @@ public class Patient extends Person {
         super.displayInfo();
 //        We will add more details later
     }
+    public void addMedicalRecord(){
+
+    }
+    public void addAppointment(){
+
+    }
+    public void updateInsurance(){
+
+    }
+    public void updateContact(String phone){
+
+    }
+    public void updateContact(String phone, String email){
+
+    }
+    public void updateContact(String phone, String email, String address){
+
+    }
 }

@@ -58,4 +58,13 @@ public class Nurse extends Person{
     public void setAssignedPatients(List<Patient> assignedPatients) {
         this.assignedPatients = assignedPatients;
     }
+    public void displayInfo(){
+        super.displayInfo();
+    }
+    public void assignPatient(){
+
+    }
+    public void removePatient(){
+
+    }
 }

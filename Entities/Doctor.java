@@ -92,4 +92,27 @@ public class Doctor extends Person{
         super.displayInfo();
 //        We will add more details later
     }
+    public  void assignPatient(){
+
+    }
+    public  void removePatient(){
+
+    }
+    public  void updateAvailability(){
+
+    }
+    //Overloaded Method
+    public  void updateFee(double fee){
+
+    }
+    public  void updateFee(double fee, String reason){
+
+    }
+    public  void addAvailability(String slot){
+
+    }
+    public  void addAvailability(List<String> slots){
+
+    }
 }
+
