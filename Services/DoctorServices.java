@@ -2,11 +2,13 @@ package Services;
 
 import Entities.Doctor;
 import Entities.Patient;
+import Interface.Manageable;
+import Interface.Searchable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoctorServices {
+public class DoctorServices implements Manageable, Searchable {
     List<Doctor> doctors=new ArrayList<>();
     public void addDoctor(Doctor doctor){
 
@@ -60,5 +62,30 @@ public class DoctorServices {
     }
     public void assignPatient(String doctorId, List<String> patientIds) {
 //        - bulk assignment
+    }
+
+    @Override
+    public void add(Object entity) {
+
+    }
+
+    @Override
+    public void remove(String id) {
+
+    }
+
+    @Override
+    public void getAll() {
+
+    }
+
+    @Override
+    public void search(String keyword) {
+
+    }
+
+    @Override
+    public void searchById(String id) {
+
     }
 }

@@ -1,9 +1,11 @@
 package Entities;
 
+import Interface.Displayable;
+
 import java.time.LocalDate;
 import java.util.List;
 
-public class Patient extends Person {
+public class Patient extends Person  {
     private String patientId;
     private String bloodGroup;
     private List<String> allergies;
@@ -88,10 +90,6 @@ public class Patient extends Person {
     public void setAppointments(List<Appointment> appointments) {
         this.appointments = appointments;
     }
-    public void displayInfo(){
-        super.displayInfo();
-//        We will add more details later
-    }
     public void addMedicalRecord(){
 
     }
@@ -108,6 +106,15 @@ public class Patient extends Person {
 
     }
     public void updateContact(String phone, String email, String address){
+
+    }
+    public void displayInfo(){
+        super.displayInfo();
+//        We will add more details later
+    }
+
+    @Override
+    public void displaySummery() {
 
     }
 }

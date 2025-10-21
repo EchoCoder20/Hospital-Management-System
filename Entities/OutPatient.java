@@ -1,9 +1,11 @@
 package Entities;
 
+import Interface.Displayable;
+
 import java.time.LocalDate;
 import java.util.List;
 
-public class OutPatient extends Patient {
+public class OutPatient extends Patient  {
     private int visitCount;
     private LocalDate lastVisitDate;
     private String preferredDoctorId;
@@ -44,4 +46,5 @@ public class OutPatient extends Patient {
     public void updateVisitCount(){
 
     }
+
 }

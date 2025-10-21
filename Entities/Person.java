@@ -1,8 +1,10 @@
 package Entities;
 
+import Interface.Displayable;
+
 import java.time.LocalDate;
 
-public class Person {
+public class Person implements Displayable {
     private String id;
     private String firstName;
     private String lastName;
@@ -87,6 +89,11 @@ public class Person {
         this.address = address;
     }
     public void displayInfo(){
+
+    }
+
+    @Override
+    public void displaySummery() {
 
     }
 

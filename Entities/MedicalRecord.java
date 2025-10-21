@@ -1,8 +1,10 @@
 package Entities;
 
+import Interface.Displayable;
+
 import java.time.LocalDate;
 
-public class MedicalRecord {
+public class MedicalRecord implements Displayable {
     private String recordId;
     private String patientId;
     private String doctorId;
@@ -85,5 +87,15 @@ public class MedicalRecord {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    @Override
+    public void displayInfo() {
+
+    }
+
+    @Override
+    public void displaySummery() {
+
     }
 }

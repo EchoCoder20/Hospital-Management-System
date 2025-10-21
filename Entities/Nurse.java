@@ -1,9 +1,11 @@
 package Entities;
 
+import Interface.Displayable;
+
 import java.time.LocalDate;
 import java.util.List;
 
-public class Nurse extends Person{
+public class Nurse extends Person  {
     private String nurseId;
     private String departmentId;
     private String shift; // Morning / Evening / Night
@@ -61,6 +63,12 @@ public class Nurse extends Person{
     public void displayInfo(){
         super.displayInfo();
     }
+
+    @Override
+    public void displaySummery() {
+
+    }
+
     public void assignPatient(){
 
     }

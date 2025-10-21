@@ -1,11 +1,13 @@
 package Services;
 
 import Entities.Nurse;
+import Interface.Manageable;
+import Interface.Searchable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NurseService {
+public class NurseService implements Manageable, Searchable {
     List<Nurse> nurses=new ArrayList<>();
     public List<Nurse> getNurses(){
         return null;
@@ -38,5 +40,30 @@ public class NurseService {
 
     public List<Nurse> getNursesByShift(String shift){
         return null;
+    }
+
+    @Override
+    public void add(Object entity) {
+
+    }
+
+    @Override
+    public void remove(String id) {
+
+    }
+
+    @Override
+    public void getAll() {
+
+    }
+
+    @Override
+    public void search(String keyword) {
+
+    }
+
+    @Override
+    public void searchById(String id) {
+
     }
 }

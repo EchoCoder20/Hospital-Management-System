@@ -1,9 +1,11 @@
 package Entities;
 
+import Interface.Displayable;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class Appointment {
+public class Appointment implements Displayable {
     private String appointmentId;
     private String patientId;
     private String doctorId;
@@ -103,6 +105,16 @@ public class Appointment {
 
     }
     public void addNotes(String notes, String addedBy, LocalDateTime timestamp){
+
+    }
+
+    @Override
+    public void displayInfo() {
+
+    }
+
+    @Override
+    public void displaySummery() {
 
     }
 }

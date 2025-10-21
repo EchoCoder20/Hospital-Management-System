@@ -1,9 +1,11 @@
 package Entities;
 
+import Interface.Displayable;
+
 import java.time.LocalDate;
 import java.util.List;
 
-public class EmergencyPatient extends InPatient{
+public class EmergencyPatient extends InPatient {
     private String emergencyType;
     private String arrivalMode; // "Ambulance" or "Walk-in"
     private int triageLevel;    // 1 (critical) → 5 (minor)
@@ -51,5 +53,10 @@ public class EmergencyPatient extends InPatient{
     public void displayInfo(){
         super.displayInfo();
 //        With other specifc info needed
+    }
+
+    @Override
+    public void displaySummery() {
+
     }
 }

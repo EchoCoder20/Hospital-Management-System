@@ -1,5 +1,7 @@
 package Entities;
 
+import Interface.Displayable;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -45,5 +47,10 @@ public class Consultant extends Doctor {
     public boolean scheduleConsultation(Patient patient, LocalDate date, String time) {
         // return true if successfully scheduled, false otherwise
         return false;
+    }
+
+    @Override
+    public void displaySummery() {
+
     }
 }

@@ -1,9 +1,11 @@
 package Entities;
 
+import Interface.Displayable;
+
 import java.time.LocalDate;
 import java.util.List;
 
-public class Doctor extends Person{
+public class Doctor extends Person  {
     private String doctorId;
     private String specialization;
     private String qualification;
@@ -92,6 +94,12 @@ public class Doctor extends Person{
         super.displayInfo();
 //        We will add more details later
     }
+
+    @Override
+    public void displaySummery() {
+
+    }
+
     public  void assignPatient(){
 
     }

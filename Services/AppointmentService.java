@@ -1,12 +1,15 @@
 package Services;
 
 import Entities.Appointment;
+import Interface.Appointable;
+import Interface.Manageable;
+import Interface.Searchable;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppointmentService {
+public class AppointmentService implements Manageable, Searchable, Appointable {
     List<Appointment> appointmentList=new ArrayList<>();
     public List<Appointment> getAllAppointments() {
         return null;
@@ -47,14 +50,19 @@ public class AppointmentService {
     public List<Appointment> getAppointmentsByDate(LocalDate date) {
         return null;
     }
-    public boolean rescheduleAppointment(String appointmentId, LocalDate newDate){
-        return true;
+    public void rescheduleAppointment(String appointmentId, LocalDate newDate){
+
     }
     public boolean rescheduleAppointment(String appointmentId, LocalDate newDate, String newTime) {
         return false;
     }
     public boolean rescheduleAppointment(Appointment appointment, LocalDate newDate, String newTime, String reason){
         return true;
+    }
+
+    @Override
+    public void scheduleAppointment(Appointment appointment) {
+
     }
 
     public boolean cancelAppointment(String appointmentId) {
@@ -65,5 +73,30 @@ public class AppointmentService {
     }
     public List<Appointment> displayAppointments(String doctorId, LocalDate startDate, LocalDate endDate){
         return null;
+    }
+
+    @Override
+    public void add(Object entity) {
+
+    }
+
+    @Override
+    public void remove(String id) {
+
+    }
+
+    @Override
+    public void getAll() {
+
+    }
+
+    @Override
+    public void search(String keyword) {
+
+    }
+
+    @Override
+    public void searchById(String id) {
+
     }
 }
