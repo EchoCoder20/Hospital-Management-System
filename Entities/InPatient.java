@@ -1,9 +1,12 @@
 package Entities;
 
+import Interface.Billable;
+import Interface.Displayable;
+
 import java.time.LocalDate;
 import java.util.List;
 
-public class InPatient extends Patient {
+public class InPatient extends Patient implements Billable {
     private LocalDate admissionDate;
     private LocalDate dischargeDate;
     private String roomNumber;
@@ -72,6 +75,26 @@ public class InPatient extends Patient {
 
     }
     public void calculateTotalCharges(){
+
+    }
+
+    @Override
+    public void displaySummery() {
+
+    }
+
+    @Override
+    public void calculateCharges() {
+
+    }
+
+    @Override
+    public void generateBill() {
+
+    }
+
+    @Override
+    public void processPayment(double amount) {
 
     }
 }

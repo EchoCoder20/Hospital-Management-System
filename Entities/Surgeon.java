@@ -1,9 +1,11 @@
 package Entities;
 
+import Interface.Displayable;
+
 import java.time.LocalDate;
 import java.util.List;
 
-public class Surgeon extends Doctor{
+public class Surgeon extends Doctor  {
     private int surgeriesPerformed;
     private List<String> surgeryTypes;
     private boolean operationTheatreAccess;
@@ -45,9 +47,5 @@ public class Surgeon extends Doctor{
     public void updateSurgeryCount() {
         surgeriesPerformed++;
     }
-    @Override
-    public void displayInfo(){
-        super.displayInfo();
-//        We will add more details later
-    }
+
 }

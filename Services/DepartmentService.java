@@ -1,10 +1,12 @@
 package Services;
 
 import Entities.Department;
+import Interface.Manageable;
+import Interface.Searchable;
 
 import java.util.List;
 
-public class DepartmentService {
+public class DepartmentService implements Manageable, Searchable {
 
     public List<Department> getAllDepartments() {
         return null;
@@ -33,5 +35,30 @@ public class DepartmentService {
 
     public boolean assignDoctorToDepartment(String doctorId, String departmentId) {
         return false;
+    }
+
+    @Override
+    public void add(Object entity) {
+
+    }
+
+    @Override
+    public void remove(String id) {
+
+    }
+
+    @Override
+    public void getAll() {
+
+    }
+
+    @Override
+    public void search(String keyword) {
+
+    }
+
+    @Override
+    public void searchById(String id) {
+
     }
 }

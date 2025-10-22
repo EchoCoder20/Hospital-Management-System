@@ -1,11 +1,13 @@
 package Services;
 
 import Entities.Patient;
+import Interface.Manageable;
+import Interface.Searchable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PatientService {
+public class PatientService implements Manageable, Searchable {
     List<Patient> patients=new ArrayList<>();
     public void addPatient(Patient patient){ //full object
 
@@ -45,4 +47,28 @@ public class PatientService {
         return null;
     }
 
+    @Override
+    public void add(Object entity) {
+
+    }
+
+    @Override
+    public void remove(String id) {
+
+    }
+
+    @Override
+    public void getAll() {
+
+    }
+
+    @Override
+    public void search(String keyword) {
+
+    }
+
+    @Override
+    public void searchById(String id) {
+
+    }
 }

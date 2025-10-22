@@ -1,9 +1,11 @@
 package Entities;
 
+import Interface.Displayable;
+
 import java.time.LocalDate;
 import java.util.List;
 
-public class GeneralPractitioner extends Doctor{
+public class GeneralPractitioner extends Doctor  {
     private boolean walkinAvailable;
     private boolean homeVisitAvailable;
     private boolean vaccinationCertified;
@@ -39,13 +41,13 @@ public class GeneralPractitioner extends Doctor{
         this.vaccinationCertified = vaccinationCertified;
     }
 
-//    @Override
-//    public void displayInfo() {
-//        super.displayInfo();
-//        System.out.println("Walk-in Available: " + walkinAvailable);
-//        System.out.println("Home Visit Available: " + homeVisitAvailable);
-//        System.out.println("Vaccination Certified: " + vaccinationCertified);
-//    }
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Walk-in Available: " + walkinAvailable);
+        System.out.println("Home Visit Available: " + homeVisitAvailable);
+        System.out.println("Vaccination Certified: " + vaccinationCertified);
+    }
 
     // GP-specific methods
     public boolean scheduleHomeVisit(Patient patient, LocalDate date, String time) {
