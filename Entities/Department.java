@@ -1,6 +1,7 @@
 package Entities;
 
 import Interface.Displayable;
+import utils.HelperUtils;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class Department implements Displayable {
     }
 
     public void setDepartmentId(String departmentId) {
-        this.departmentId = departmentId;
+        this.departmentId = HelperUtils.generateId("Dep");
     }
 
     public String getDepartmentName() {

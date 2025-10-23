@@ -1,6 +1,7 @@
 package Entities;
 
 import Interface.Displayable;
+import utils.HelperUtils;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -39,7 +40,7 @@ public class Appointment implements Displayable {
     }
 
     public void setPatientId(String patientId) {
-        this.patientId = patientId;
+        this.patientId = HelperUtils.generateId("Apo");
     }
 
     public String getDoctorId() {

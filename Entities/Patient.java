@@ -1,6 +1,7 @@
 package Entities;
 
 import Interface.Displayable;
+import utils.HelperUtils;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -32,7 +33,7 @@ public class Patient extends Person  {
     }
 
     public void setPatientId(String patientId) {
-        this.patientId = patientId;
+        this.patientId = HelperUtils.generateId("PAT");
     }
 
     public String getBloodGroup() {

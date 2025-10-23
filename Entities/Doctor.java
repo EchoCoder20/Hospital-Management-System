@@ -1,6 +1,7 @@
 package Entities;
 
 import Interface.Displayable;
+import utils.HelperUtils;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -32,7 +33,7 @@ public class Doctor extends Person  {
     }
 
     public void setDoctorId(String doctorId) {
-        this.doctorId = doctorId;
+        this.doctorId = HelperUtils.generateId("DOC");;
     }
 
     public String getSpecialization() {
