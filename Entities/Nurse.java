@@ -1,6 +1,7 @@
 package Entities;
 
 import Interface.Displayable;
+import utils.HelperUtils;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -26,7 +27,7 @@ public class Nurse extends Person  {
     }
 
     public void setNurseId(String nurseId) {
-        this.nurseId = nurseId;
+        this.nurseId = HelperUtils.generateId("NUR");;
     }
 
     public String getDepartmentId() {

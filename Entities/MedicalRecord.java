@@ -1,6 +1,7 @@
 package Entities;
 
 import Interface.Displayable;
+import utils.HelperUtils;
 
 import java.time.LocalDate;
 
@@ -30,7 +31,7 @@ public class MedicalRecord implements Displayable {
     }
 
     public void setRecordId(String recordId) {
-        this.recordId = recordId;
+        this.recordId = HelperUtils.generateId("Medical");
     }
 
     public String getPatientId() {
