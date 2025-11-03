@@ -32,7 +32,7 @@ public class Appointment implements Displayable {
     }
 
     public void setAppointmentId(String appointmentId) {
-        this.appointmentId = appointmentId;
+        this.appointmentId = HelperUtils.generateId();
     }
 
     public String getPatientId() {
