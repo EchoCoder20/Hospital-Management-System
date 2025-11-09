@@ -1,14 +1,18 @@
 package utils;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class InputHandler {
     static Scanner scanner=new Scanner(System.in);
     public static String getStringInput(String prompt){
-        System.out.print(prompt + ": ");
-        String userInput=scanner.nextLine().trim();
-        if(HelperUtils.isValidString(userInput))
-            return "Please Enter valid data!";
+        System.out.println(prompt);
+        String userInput;
+        userInput=scanner.nextLine().trim();
+        while(!HelperUtils.isValidString(userInput)) {
+            System.out.println("Please Enter valid data!");
+            userInput=scanner.nextLine().trim();
+        }
         return userInput;
     }
     public static Integer getIntInput(String prompt) {
@@ -25,16 +29,13 @@ public class InputHandler {
         return userInput;
     }
     public static Integer getIntInput(String prompt, int min, int max) {
-        boolean flag=true;
         Integer userInput = 0;
-        while (flag){
             System.out.print(prompt + ": ");
             userInput= scanner.nextInt();
-            if(HelperUtils.isValidNumber(userInput,min,max) ) {
-                flag=false;
+            while(!HelperUtils.isValidNumber(userInput,min,max) ) {
+                userInput= scanner.nextInt();
+                System.out.println("Invalid Data !");
             }
-            System.out.println("Invalid Data !");
-        }
         return userInput;
     }
     public static Double getDoubleInput(String prompt) {
@@ -75,6 +76,14 @@ public class InputHandler {
             System.out.println("Invalid Data !");
         }
         return userInput;
+    }
+    public static LocalDate getDateInput(String prompt) {
+        System.out.println(prompt);
+        LocalDate date;
+        date= LocalDate.parse(scanner.nextLine());
+        LocalDate today = LocalDate.now();
+        while (date == null || date.isAfter(today) || date.isBefore(today)) return LocalDate.parse("Invalid Date");
+        return date;
     }
 
 

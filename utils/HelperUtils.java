@@ -27,20 +27,20 @@ public class HelperUtils {
 //    String Validation Methods (Overloaded)
     public static boolean isValidString(String str) {
         return str != null && !str.trim().isEmpty();
-    }
+    } //InputHandler
     public static boolean isValidString(String str, int minLength) {
         return str != null && str.length() >= minLength;
-    }
+    }//Entity
     public static boolean isValidString(String str, int minLength, int maxLength) {
         return str != null && str.length() >= minLength && str.length() <= maxLength;
-    }
+    }//Entity
     public static boolean isValidString(String str, String regex) {
         return str != null && str.matches(regex);
-    }
+    }//Entity
 //    ID Generation Methods (Overloaded)
     public static String generateId() {
         return UUID.randomUUID().toString();
-    }
+    }//Entity
     public static String generateId(String prefix) {
         int randomNum = (int) (Math.random() * 100000); // 5-digit random number
         return prefix + "-" + randomNum;
@@ -60,11 +60,12 @@ public class HelperUtils {
     }
 //Numeric Validation Methods (Overloaded)
     public static boolean isValidNumber(int num, int min, int max) {
+        System.out.println(num >= min && num <= max);
         return num >= min && num <= max;
-    }
+    }//InputHandler
     public static boolean isValidNumber(double num, double min, double max) {
         return num >= min && num <= max;
-    }
+    }//InputHandler
     public static boolean isPositive(int num) {
         return num > 0;
     }
@@ -80,7 +81,7 @@ public class HelperUtils {
 //Input Validation Methods (Overloaded)
     public static boolean isValidAge(int age) {
         return age > 0 && age < 120;
-    }
+    }//InputHandler
 
     public static boolean isValidAge(LocalDate dateOfBirth) {
         if (dateOfBirth == null) return false;
@@ -90,7 +91,9 @@ public class HelperUtils {
 
         int age = Period.between(dateOfBirth, today).getYears();
         return age > 0 && age < 120;
-    }
+    }//InputHandler
+
+
 
 
 }
