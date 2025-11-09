@@ -1,6 +1,7 @@
 package Entities;
 
 import Interface.Displayable;
+import utils.HelperUtils;
 
 import java.time.LocalDate;
 
@@ -30,7 +31,7 @@ public class Person implements Displayable {
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.id = HelperUtils.generateId();
     }
 
     public String getFirstName() {

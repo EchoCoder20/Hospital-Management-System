@@ -1,7 +1,6 @@
 package Entities;
 
 import Interface.Billable;
-import Interface.Displayable;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -22,6 +21,49 @@ public class InPatient extends Patient implements Billable {
         this.bedNumber = bedNumber;
         this.admittingDoctorId = admittingDoctorId;
         this.dailyCharges = dailyCharges;
+    }
+
+    public static class Builder extends Patient.Builder{
+        private LocalDate admissionDate;
+        private LocalDate dischargeDate;
+        private String roomNumber;
+        private String bedNumber;
+        private String admittingDoctorId;
+        private double dailyCharges;
+        public Builder setAdmissionDate(LocalDate admissionDate) {
+            this.admissionDate = admissionDate;
+            return this;
+        }
+        public Builder dischargeDate(LocalDate date) {
+            this.dischargeDate = date;
+            return this;
+        }
+
+        public Builder roomNumber(String room) {
+            this.roomNumber = room;
+            return this;
+        }
+
+        public Builder bedNumber(String bed) {
+            this.bedNumber = bed;
+            return this;
+        }
+
+        public Builder admittingDoctorId(String id) {
+            this.admittingDoctorId = id;
+            return this;
+        }
+
+        public Builder dailyCharges(double charges) {
+            this.dailyCharges = charges;
+            return this;
+        }
+        public InPatient build(){
+            return new InPatient( id, firstName, lastName, dateOfBirth, gender, phoneNumber, email, address,
+                    patientId, bloodGroup, allergies, emergencyContact, registrationDate, insuranceId,
+                    medicalRecords, appointments,
+                    admissionDate, dischargeDate, roomNumber, bedNumber, admittingDoctorId, dailyCharges);
+        }
     }
 
     public LocalDate getAdmissionDate() {

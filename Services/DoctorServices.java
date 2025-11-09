@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoctorServices implements Manageable, Searchable {
-    List<Doctor> doctors=new ArrayList<>();
+    static List<Doctor> doctors=new ArrayList<>();
     public void addDoctor(Doctor doctor){
 
     }
