@@ -37,6 +37,8 @@ public class Main {
             userInput=scanner.nextInt();
             if(userInput==1){
                 patientMenu();
+            } else if (userInput==2) {
+                doctorMenu();
             }
         }
     }
@@ -55,12 +57,32 @@ public class Main {
                 10 Remove Doctor
                 """);
         int userInput=0;
-        while(userInput!=9) {
+        while(userInput!=10) {
             String prompt = "Enter your option from (1) to (10) only";
             userInput = InputHandler.getIntInput(prompt, 1, 10);
             if(userInput==1){
-                Doctor newDoctor=DoctorServices.
+                Doctor newDoctor=ds.getDoctorData(1);
+                ds.add(newDoctor);
+            } else if (userInput==5) {
+                ds.getAll();
+            } else if (userInput==6) {
+                String doctorSpe=InputHandler.getStringInput("Enter Doctor Specialization:");
+                List<Doctor> doctorsList=ds.getDoctorsBySpecialization(doctorSpe);
+                ds.displayDoctors(doctorsList);
+            } else if (userInput==7) {
+                List<Doctor> availableDoctor = ds.getAvailableDoctors();
+                ds.displayDoctors(availableDoctor);
+            } else if (userInput==8) {
+                String doctorIdInfo = InputHandler.getStringInput("Enter Doctor ID");
+                ds.assignPatient(doctorIdInfo);
 
+            }else if(userInput==9){
+                String doctorId= InputHandler.getStringInput("Enter Doctor ID : ");
+                ds.searchById(doctorId);
+
+            } else if (userInput==10) {
+                String doctorId= InputHandler.getStringInput("Enter Doctor ID : ");
+                ds.remove(doctorId);
             }
         }
     }
@@ -98,7 +120,6 @@ public class Main {
                 ps.search(patientName);
             } else if (userInput==7) {
                 String patientId= InputHandler.getStringInput("Enter Patient ID : ");
-                System.out.println(patientId);
                 Patient patient= ps.searchPatients(patientId);
                 if(patient==null){
                     System.out.println("No Patient with this ID");

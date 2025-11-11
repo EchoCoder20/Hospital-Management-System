@@ -1,8 +1,5 @@
 package Entities;
 
-import Interface.Displayable;
-import utils.HelperUtils;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -27,13 +24,80 @@ public class Doctor extends Person  {
         this.availableSlots = availableSlots;
         this.assignedPatients = assignedPatients;
     }
+    public static class Builder{
+        String id;
+        String firstName;
+        String lastName;
+        LocalDate dateOfBirth;
+        String gender;
+        String phoneNumber;
+        String email;
+        String address;
+        String doctorId;
+        String specialization;
+        String qualification;
+        int experienceYears;
+        String departmentId;
+        double consultationFee;
+        List<String> availableSlots;
+        List<Patient> assignedPatients;
+
+        public Doctor.Builder setId(String id) { this.id = id; return this; }
+        public Doctor.Builder setFirstName(String firstName) { this.firstName = firstName; return this; }
+        public Doctor.Builder setLastName(String lastName) { this.lastName = lastName; return this; }
+        public Doctor.Builder setDateOfBirth(LocalDate dateOfBirth) { this.dateOfBirth = dateOfBirth; return this; }
+        public Doctor.Builder setGender(String gender) { this.gender = gender; return this; }
+        public Doctor.Builder setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; return this; }
+        public Doctor.Builder setEmail(String email) { this.email = email; return this; }
+        public Doctor.Builder setAddress(String address) { this.address = address; return this; }
+        public Doctor.Builder setDoctorId(String doctorId) {
+            this.doctorId = doctorId;
+            return this;
+        }
+        public Doctor.Builder setSpecialization(String specialization) {
+            this.specialization = specialization;
+            return this;
+        }
+        public Doctor.Builder setQualification(String qualification) {
+            this.qualification = qualification;
+            return this;
+        }
+        public Doctor.Builder  setExperienceYears(int experienceYears) {
+            this.experienceYears = experienceYears;
+            return this;
+        }
+        public Doctor.Builder setDepartmentId(String departmentId) {
+            this.departmentId = departmentId;
+            return this;
+        }
+        public Doctor.Builder setConsultationFee(double consultationFee) {
+            this.consultationFee = consultationFee;
+            return this;
+        }
+
+        public Doctor.Builder setAvailableSlots(List<String> availableSlots) {
+            this.availableSlots = availableSlots;
+            return this;
+        }
+        public Doctor.Builder setAssignedPatients(List<Patient> assignedPatients) {
+            this.assignedPatients = assignedPatients;
+            return this;
+        }
+
+        public Doctor build() {
+            return new Doctor(id, firstName, lastName, dateOfBirth, gender, phoneNumber, email, address,doctorId,specialization,qualification,experienceYears
+            ,departmentId,consultationFee,availableSlots,assignedPatients
+            );
+        }
+
+    }
 
     public String getDoctorId() {
         return doctorId;
     }
 
     public void setDoctorId(String doctorId) {
-        this.doctorId = HelperUtils.generateId("DOC");;
+        this.doctorId = doctorId;
     }
 
     public String getSpecialization() {
@@ -101,8 +165,7 @@ public class Doctor extends Person  {
 
     }
 
-    public  void assignPatient(){
-
+    public  void assignPatient(Patient patientFound){
     }
     public  void removePatient(){
 

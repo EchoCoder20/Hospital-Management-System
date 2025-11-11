@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class InputHandler {
     static Scanner scanner=new Scanner(System.in);
     public static String getStringInput(String prompt){
+        scanner.nextLine();
         System.out.println(prompt);
         String userInput;
         userInput=scanner.nextLine().trim();
@@ -19,12 +20,14 @@ public class InputHandler {
         boolean flag=true;
         Integer userInput = 0;
         while (flag){
-            System.out.print(prompt + ": ");
+            System.out.print(prompt);
             userInput= scanner.nextInt();
             if(HelperUtils.isPositive(userInput) ) {
                 flag=false;
+            }else{
+                System.out.println("Invalid Data !");
             }
-            System.out.println("Invalid Data !");
+
         }
         return userInput;
     }
