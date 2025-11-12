@@ -1,7 +1,9 @@
 import Entities.Doctor;
 import Entities.InPatient;
+import Entities.Nurse;
 import Entities.Patient;
 import Services.DoctorServices;
+import Services.NurseService;
 import Services.PatientService;
 import utils.HelperUtils;
 import utils.InputHandler;
@@ -39,9 +41,54 @@ public class Main {
                 patientMenu();
             } else if (userInput==2) {
                 doctorMenu();
+            } else if (userInput==3) {
+                nurseMenu();
             }
         }
     }
+
+    private static void nurseMenu() {
+        NurseService ns=new NurseService();
+        System.out.println("""
+                1. Add Nurse
+                2. View All Nurses
+                3. View Nurses by Department
+                4. View Nurses by Shift
+                5. Assign Nurse to Patient
+                6. Update Nurse Information
+                7. Remove Nurse
+                """);
+        int userInput=0;
+        while(userInput!=10) {
+            String prompt = "Enter your option from (1) to (10) only";
+            userInput = InputHandler.getIntInput(prompt, 1, 8);
+            if(userInput==1){
+                Nurse newNurse=ns.getNurseData();
+                ns.add(newNurse);
+            } else if (userInput==2) {
+                ns.getAll();
+            } else if (userInput==3) {
+                prompt = "Enter Department ID";
+                String depId=scanner.nextLine();
+                List<Nurse> nurseByDep=ns.getNursesByDepartment(depId);
+                for(Nurse nurse:nurseByDep){
+                    System.out.println("Nurse ID :" + nurse.getNurseId() + "Nurse Name:" + nurse.getFirstName());
+                }
+            } else if (userInput==4) {
+                String nurseIdDetails = InputHandler.getStringInput("Enter Nurse ID");
+                ns.assignPatient(nurseIdDetails);
+            } else if (userInput==5) {
+                String nurseId= InputHandler.getStringInput("Enter Nurse ID : ");
+                ns.searchById(nurseId);
+            } else if (userInput==6) {
+                String nurseId= InputHandler.getStringInput("Enter Nurse ID : ");
+                ns.remove(nurseId);
+            }
+
+        }
+
+    }
+
     private static void doctorMenu(){
         DoctorServices ds=new DoctorServices();
         System.out.println("""
